@@ -1,7 +1,7 @@
-Jersey-REST-Scala-SpringBoot-Gradle-MongoDB
+DigitalWallet
 ===========================================
-Digital Wallet for a user to store ID cards, web-site logins, Bank accounts and so on.
-Resource Model:
+Digital Wallet is a set of resources for a user to store ID cards, web-site logins, Bank accounts and so on.<br></br>
+Resource Model:<br></br>
 
-Technology Stack:
+Technology Stack:<br></br>
 REST, Scala, JSON, Jersey Framework, SpringBoot, Gradle, MongoDB,.
