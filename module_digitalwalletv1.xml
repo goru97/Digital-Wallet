@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_digitalwalletv1" default="compile.module.digitalwalletv1">
+  <dirname property="module.digitalwalletv1.basedir" file="${ant.file.module_digitalwalletv1}"/>
+  
+  <property name="module.jdk.home.digitalwalletv1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.digitalwalletv1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.digitalwalletv1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.digitalwalletv1" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="digitalwalletv1.output.dir" value="${module.digitalwalletv1.basedir}/out/production/DigitalWalletV1"/>
+  <property name="digitalwalletv1.testoutput.dir" value="${module.digitalwalletv1.basedir}/out/test/DigitalWalletV1"/>
+  
+  <path id="digitalwalletv1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="digitalwalletv1.module.production.classpath">
+    <path refid="${module.jdk.classpath.digitalwalletv1}"/>
+    <path refid="library.scala-library.classpath"/>
+  </path>
+  
+  <path id="digitalwalletv1.runtime.production.module.classpath">
+    <pathelement location="${digitalwalletv1.output.dir}"/>
+    <path refid="library.scala-library.classpath"/>
+  </path>
+  
+  <path id="digitalwalletv1.module.classpath">
+    <path refid="${module.jdk.classpath.digitalwalletv1}"/>
+    <pathelement location="${digitalwalletv1.output.dir}"/>
+    <path refid="library.scala-library.classpath"/>
+  </path>
+  
+  <path id="digitalwalletv1.runtime.module.classpath">
+    <pathelement location="${digitalwalletv1.testoutput.dir}"/>
+    <pathelement location="${digitalwalletv1.output.dir}"/>
+    <path refid="library.scala-library.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.digitalwalletv1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.digitalwalletv1">
+    <patternset refid="excluded.from.module.digitalwalletv1"/>
+  </patternset>
+  
+  <path id="digitalwalletv1.module.sourcepath">
+    <dirset dir="${module.digitalwalletv1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.digitalwalletv1" depends="compile.module.digitalwalletv1.production,compile.module.digitalwalletv1.tests" description="Compile module DigitalWalletV1"/>
+  
+  <target name="compile.module.digitalwalletv1.production" depends="register.custom.compilers" description="Compile module DigitalWalletV1; production classes">
+    <mkdir dir="${digitalwalletv1.output.dir}"/>
+    <javac2 destdir="${digitalwalletv1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.digitalwalletv1}/javac">
+      <compilerarg line="${compiler.args.digitalwalletv1}"/>
+      <bootclasspath refid="digitalwalletv1.module.bootclasspath"/>
+      <classpath refid="digitalwalletv1.module.production.classpath"/>
+      <src refid="digitalwalletv1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.digitalwalletv1"/>
+    </javac2>
+    
+    <copy todir="${digitalwalletv1.output.dir}">
+      <fileset dir="${module.digitalwalletv1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.digitalwalletv1.tests" depends="register.custom.compilers,compile.module.digitalwalletv1.production" description="compile module DigitalWalletV1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.digitalwalletv1" description="cleanup module">
+    <delete dir="${digitalwalletv1.output.dir}"/>
+    <delete dir="${digitalwalletv1.testoutput.dir}"/>
+  </target>
+</project>

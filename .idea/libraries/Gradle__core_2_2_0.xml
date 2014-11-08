@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: core-2.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/core/2.2.0/45255daf9d400c061fb13a674619b23bb956528/core-2.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/core/2.2.0/891b90881c563eee24318ebdd965769fbcad0a1b/core-2.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
