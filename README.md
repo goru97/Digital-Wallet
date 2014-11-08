@@ -1,4 +1,7 @@
 Jersey-REST-Scala-SpringBoot-Gradle-MongoDB
 ===========================================
+Digital Wallet for a user to store ID cards, web-site logins, Bank accounts and so on.
+Resource Model:
 
-REST WebServices written in scala using Jersey Framework, SpringBoot as Application Server, Gradle as build tool, MongoDB as persistence 
+Technology Stack:
+REST, Scala, JSON, Jersey Framework, SpringBoot, Gradle, MongoDB,.
